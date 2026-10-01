@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Orbit Airpodes Prime 701 ANC – 3D box</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg1:#f3f1ee;--bg2:#d9d5d0;--ink:#26211f;--chip:rgba(255,255,255,.78);--chip-on:#8e1522;--chip-on-ink:#fff;--line:rgba(0,0,0,.14)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#2b2827;--bg2:#141211;--ink:#eee8e4;--chip:rgba(255,255,255,.1);--chip-on:#c3283a;--line:rgba(255,255,255,.18)}}
+:root[data-theme="dark"]{--bg1:#2b2827;--bg2:#141211;--ink:#eee8e4;--chip:rgba(255,255,255,.1);--chip-on:#c3283a;--line:rgba(255,255,255,.18)}
+html,body{height:100%;margin:0}
+body{background:radial-gradient(ellipse at 50% 38%,var(--bg1),var(--bg2));color:var(--ink);font:14px/1.3 system-ui,-apple-system,"Segoe UI",sans-serif;overflow:hidden;-webkit-user-select:none;user-select:none}
+#stage{position:fixed;inset:0;touch-action:none;cursor:grab}
+#stage:active{cursor:grabbing}
+canvas{display:block;width:100%;height:100%}
+#hud{position:fixed;left:0;right:0;top:calc(env(safe-area-inset-top,0px) + 10px);text-align:center;pointer-events:none}
+#hud b{font-weight:600}
+#hud span{display:block;opacity:.65;font-size:12px;margin-top:2px}
+#bar{position:fixed;left:0;right:0;bottom:calc(env(safe-area-inset-bottom,0px) + 12px);display:flex;flex-wrap:wrap;gap:6px;justify-content:center;padding:0 10px}
+button{font:inherit;color:var(--ink);background:var(--chip);border:1px solid var(--line);border-radius:999px;padding:8px 13px;min-height:36px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+button:focus-visible{outline:2px solid var(--chip-on);outline-offset:2px}
+button.on{background:var(--chip-on);color:var(--chip-on-ink,#fff);border-color:transparent}
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<div id="hud"><b>Orbit Airpodes Prime 701 ANC</b><span>8 × 12 × 3 in · drag to rotate, pinch or scroll to zoom</span></div>
+<div id="bar" role="toolbar" aria-label="Views">
+<button data-v="front">Front</button><button data-v="back">Back</button><button data-v="left">Left</button><button data-v="right">Right</button><button data-v="top">Top</button><button data-v="bottom">Bottom</button><button id="spin" class="on">Auto-spin</button>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
